@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Dritan Stock Data v1</title>
+</h:head>
+<h:body style="max-width: 50%; margin: auto; padding: 25px;">
+    <h:form id="form">
+        <p:panel header="DAX Stock Price">
+            <p:inputText id="name" value="#{stockForm.code}" size="10" placeholder="Stock code" />
+            &nbsp;
+            <p:commandButton value="Fetch data >">
+                <f:ajax execute="@form" render="form"
+                        listener="#{stockForm.onFetchData}"
+                        onevent="function(data) {if (data.status !== 'success') { document.getElementById('loader').style.display='block'; } else {document.getElementById('loader').style.display='none'; } }"
+                />
+            </p:commandButton>
+            <div id="loader" style="display: none;">Loading...</div>
+            <div style="float: right;">
+                <h:outputText rendered="#{stockForm.renderable}" value="#{stockForm.stock.value}"/>
+            </div>
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
