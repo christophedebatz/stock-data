@@ -6,6 +6,6 @@ $ cd /path/to/project
 $ mvn clean install
 $ wildfly:run
 ```
-* Open the page **localhost:9090** on your browser.
+* Open the page **localhost:8080/stock-data** on your browser (the port is according to your deployment settings)
 
 Dritan.
