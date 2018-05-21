@@ -11,8 +11,6 @@
 <h:body style="max-width: 50%; margin: auto; padding: 25px;">
     <h:form id="form">
         <p:panel header="DAX Stock Price">
-            <p:inputText id="name" value="#{stockForm.code}" size="10" placeholder="Stock code"/>
-            &nbsp;
             <p:commandButton value="Fetch data >">
                 <f:ajax execute="@form" render="form"
                         listener="#{stockForm.onFetchData}"
@@ -36,9 +34,9 @@
         </p:panel>
         <div align="center">
             <span style="font-size: 11px; color: lightslategrey;">
-                Data are friendly provided by
-                <a href="https://www.alphavantage.co" target="_blank">
-                    AlphAvantage
+                Data are "friendly" provided by
+                <a href="https://www.lesechos.fr" target="_blank">
+                    Les Echos
                 </a>
             </span>
         </div>

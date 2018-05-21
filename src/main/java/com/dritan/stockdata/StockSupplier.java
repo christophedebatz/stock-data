@@ -2,8 +2,9 @@ package com.dritan.stockdata;
 
 import javax.ejb.Local;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 @Local
-public interface StockSupplier extends Function<String, Stock> {
+interface StockSupplier extends Supplier<Stock> {
 
 }
